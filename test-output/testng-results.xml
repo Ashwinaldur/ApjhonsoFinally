@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="23884" started-at="2019-01-07T11:12:16Z" finished-at="2019-01-07T11:12:40Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="23884" started-at="2019-01-07T11:12:16Z" finished-at="2019-01-07T11:12:40Z">
+      <class name="com.alphonso.tests.AlphonsoSearchAsset">
+        <test-method status="PASS" signature="alphonsoSearch()[pri:0, instance:com.alphonso.tests.AlphonsoSearchAsset@7a765367]" name="alphonsoSearch" duration-ms="11720" started-at="2019-01-07T11:12:28Z" finished-at="2019-01-07T11:12:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alphonsoSearch -->
+      </class> <!-- com.alphonso.tests.AlphonsoSearchAsset -->
+      <class name="com.alphonso.tests.AlphonsoLogin">
+        <test-method status="PASS" signature="precondition()[pri:0, instance:com.alphonso.tests.AlphonsoLogin@52feb982]" name="precondition" is-config="true" duration-ms="27953" started-at="2019-01-07T11:11:48Z" finished-at="2019-01-07T11:12:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method status="PASS" signature="alphonsoLogin()[pri:0, instance:com.alphonso.tests.AlphonsoLogin@52feb982]" name="alphonsoLogin" duration-ms="12133" started-at="2019-01-07T11:12:16Z" finished-at="2019-01-07T11:12:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alphonsoLogin -->
+        <test-method status="PASS" signature="postcondition()[pri:0, instance:com.alphonso.tests.AlphonsoLogin@52feb982]" name="postcondition" is-config="true" duration-ms="2029" started-at="2019-01-07T11:12:40Z" finished-at="2019-01-07T11:12:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postcondition -->
+      </class> <!-- com.alphonso.tests.AlphonsoLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
