@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="run" name="Alphonso2">
+	<property name="ws.home" value="${basedir}" />
+	<property name="classes.dir" value="target" />
+	<property name="src.dir" value="src" />
+	<property name="report.dir" value="reports" />
+	<property name="docs.dir" value="docs" />
+	<path id="C:\DATA\lib">
+		<fileset dir="C:\DATA\lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${basedir}\${classes.dir}" />
+	</path>
+	<target name="run">
+		<antcall target="init" />
+		<antcall target="setParams" />
+		<antcall target="compile" />
+		<antcall target="runTests" />
+	</target>
+
+	<!-- Delete old data and create new directories -->
+	<target name="init">
+		<echo>Initializing...</echo>
+		<delete dir="${classes.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<delete dir="${report.dir}" />
+		<mkdir dir="${report.dir}" />
+	</target>
+	<target name="setParams">
+	</target>
+
+	<!-- Complies the java files -->
+	<target name="compile">
+		<echo>Compiling...</echo>
+		<javac encoding="ISO-8859-1" includeAntRuntime="No" classpathref="C:\DATA\lib" destdir="${classes.dir}" srcdir="${src.dir}" debug="true" />
+	</target>
+	<taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="C:\DATA\lib" />
+	<target name="runTests">
+		<delete dir="TestNGReport" />
+		<mkdir dir="TestNGReport" />
+		<testng classpathref="C:\DATA\lib" useDefaultListeners="true" outputdir="TestNGReport">
+			<xmlfileset dir="${ws.home}" includes="testng.xml" />
+			<sysproperty value="ECom automation test scenarios" key="org.uncommons.reportng.title" />
+			<sysproperty value="false" key="org.uncommons.reportng.escape-output" />
+			<sysproperty value="${Environment}" key="Environment" />
+			<sysproperty value="${Browser}" key="Browser" />
+			<sysproperty value="${Platform}" key="Platform" />
+			<!-- These params are passed from Jenkins -->
+		</testng>
+		
+	<!--XSLT reports- Generate  -->
+		
+</target>
+
+
+</project>
